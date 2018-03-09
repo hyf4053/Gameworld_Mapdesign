@@ -11,12 +11,16 @@ public class HexGrid : MonoBehaviour {
 	public HexCell cellPrefab;
 	public Text cellLabelPrefab;
 
+	public Texture2D noiseSource;
+
 	HexCell[] cells;
 
 	Canvas gridCanvas;
 	HexMesh hexMesh;
 
 	void Awake () {
+		HexMetrics.noiseSource = noiseSource;
+
 		gridCanvas = GetComponentInChildren<Canvas>();
 		hexMesh = GetComponentInChildren<HexMesh>();
 
@@ -33,12 +37,18 @@ public class HexGrid : MonoBehaviour {
 		hexMesh.Triangulate(cells);
 	}
 
-	public void ColorCell (Vector3 position, Color color) {
+	void OnEnable () {
+		HexMetrics.noiseSource = noiseSource;
+	}
+
+	public HexCell GetCell (Vector3 position) {
 		position = transform.InverseTransformPoint(position);
 		HexCoordinates coordinates = HexCoordinates.FromPosition(position);
 		int index = coordinates.X + coordinates.Z * width + coordinates.Z / 2;
-		HexCell cell = cells[index];
-		cell.color = color;
+		return cells[index];
+	}
+
+	public void Refresh () {
 		hexMesh.Triangulate(cells);
 	}
 
@@ -54,10 +64,31 @@ public class HexGrid : MonoBehaviour {
 		cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
 		cell.color = defaultColor;
 
+		if (x > 0) {
+			cell.SetNeighbor(HexDirection.W, cells[i - 1]);
+		}
+		if (z > 0) {
+			if ((z & 1) == 0) {
+				cell.SetNeighbor(HexDirection.SE, cells[i - width]);
+				if (x > 0) {
+					cell.SetNeighbor(HexDirection.SW, cells[i - width - 1]);
+				}
+			}
+			else {
+				cell.SetNeighbor(HexDirection.SW, cells[i - width]);
+				if (x < width - 1) {
+					cell.SetNeighbor(HexDirection.SE, cells[i - width + 1]);
+				}
+			}
+		}
+
 		Text label = Instantiate<Text>(cellLabelPrefab);
 		label.rectTransform.SetParent(gridCanvas.transform, false);
 		label.rectTransform.anchoredPosition =
 			new Vector2(position.x, position.z);
 		label.text = cell.coordinates.ToStringOnSeparateLines();
+		cell.uiRect = label.rectTransform;
+
+		cell.Elevation = 0;
 	}
 }
