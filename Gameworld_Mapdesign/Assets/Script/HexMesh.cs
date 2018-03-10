@@ -8,15 +8,20 @@ public class HexMesh : MonoBehaviour {
      * 创建顶点和三角形的List
      */
     Mesh hexMesh;
+    MeshCollider meshCollider;
+
     List<Vector3> vertices;
     List<int> triangles;
+    List<Color> colors;
 
     void Awake()
     {
         GetComponent<MeshFilter>().mesh = hexMesh = new Mesh();
+        meshCollider = gameObject.AddComponent<MeshCollider>();
         hexMesh.name = "Hex Mesh";
         vertices = new List<Vector3>();
         triangles = new List<int>();
+        colors = new List<Color>();
     }
 
     //三角化
@@ -25,13 +30,18 @@ public class HexMesh : MonoBehaviour {
         hexMesh.Clear();
         vertices.Clear();
         triangles.Clear();
-        for(int i = 0; i < cells.Length; i++)
+        colors.Clear();
+
+        for (int i = 0; i < cells.Length; i++)
         {
             Triangulate(cells[i]);
         }
         hexMesh.vertices = vertices.ToArray();
         hexMesh.triangles = triangles.ToArray();
+        hexMesh.colors = colors.ToArray();
         hexMesh.RecalculateNormals();
+
+        meshCollider.sharedMesh = hexMesh;
     }
 
     void Triangulate (HexCell cell)
@@ -44,7 +54,15 @@ public class HexMesh : MonoBehaviour {
                 center + HexMetrics.corners[i],
                 center + HexMetrics.corners[i + 1]
             );
+            AddTriangleColor(cell.color);
         }
+    }
+
+    void AddTriangleColor(Color color)
+    {
+        colors.Add(color);
+        colors.Add(color);
+        colors.Add(color);
     }
 
     void AddTriangle(Vector3 v1, Vector3 v2, Vector3 v3)
