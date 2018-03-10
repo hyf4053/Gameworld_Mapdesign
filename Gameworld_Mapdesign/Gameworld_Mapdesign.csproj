@@ -288,16 +288,43 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\HexCell.cs" />
-    <Compile Include="Assets\Script\HexCoordinates.cs" />
-    <Compile Include="Assets\Script\HexDirection.cs" />
-    <Compile Include="Assets\Script\HexGrid.cs" />
-    <Compile Include="Assets\Script\HexMapEditor.cs" />
-    <Compile Include="Assets\Script\HexMesh.cs" />
-    <Compile Include="Assets\Script\HexMetrics.cs" />
+    <Compile Include="Assets\Scripts\MainMeun Scripts\MainMenuButton.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\Bezier.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\EdgeVertices.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexCell.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexCellPriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexCellShaderData.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexCoordinates.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexDirection.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexEdgeType.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexFeatureCollection.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexFeatureManager.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexGrid.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexGridChunk.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexHash.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexMapCamera.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexMapGenerator.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexMesh.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexMetrics.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexUnit.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\ListPool.cs" />
+    <Compile Include="Assets\Scripts\UI\HexGameUI.cs" />
+    <Compile Include="Assets\Scripts\UI\HexMapEditor.cs" />
+    <Compile Include="Assets\Scripts\UI\NewMapMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\SaveLoadItem.cs" />
+    <Compile Include="Assets\Scripts\UI\SaveLoadMenu.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Script\VertexColors.shader" />
+    <None Include="Assets\Materials\Estuary.shader" />
+    <None Include="Assets\Materials\Features\Feature.shader" />
+    <None Include="Assets\Materials\HexCellData.cginc" />
+    <None Include="Assets\Materials\Highlight\Highlight.shader" />
+    <None Include="Assets\Materials\River.shader" />
+    <None Include="Assets\Materials\Road.shader" />
+    <None Include="Assets\Materials\Terrain\Terrain.shader" />
+    <None Include="Assets\Materials\Water Shore.shader" />
+    <None Include="Assets\Materials\Water.cginc" />
+    <None Include="Assets\Materials\Water.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
