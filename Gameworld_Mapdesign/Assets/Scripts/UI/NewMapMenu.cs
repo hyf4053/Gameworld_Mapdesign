@@ -6,6 +6,8 @@ public class NewMapMenu : MonoBehaviour {
 
 	public HexMapGenerator mapGenerator;
 
+    public PlayMode playMode;
+
 	bool generateMaps = true;
 
 	public void ToggleMapGeneration (bool toggle) {
@@ -37,11 +39,13 @@ public class NewMapMenu : MonoBehaviour {
 	void CreateMap (int x, int z) {
 		if (generateMaps) {
 			mapGenerator.GenerateMap(x, z);
+           
 		}
 		else {
 			hexGrid.CreateMap(x, z);
 		}
 		HexMapCamera.ValidatePosition();
-		Close();
+        playMode.RespawnPlayInRandomCell();
+        Close();
 	}
 }

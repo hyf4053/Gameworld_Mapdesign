@@ -13,6 +13,7 @@ public class HexFeatureManager : MonoBehaviour {
 
 	Transform container;
 
+    //清除地图元素
 	public void Clear () {
 		if (container) {
 			Destroy(container.gameObject);

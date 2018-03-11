@@ -764,4 +764,8 @@ public class HexMapGenerator : MonoBehaviour {
 			Random.Range(region.zMin, region.zMax)
 		);
 	}
+
+
+
+
 }

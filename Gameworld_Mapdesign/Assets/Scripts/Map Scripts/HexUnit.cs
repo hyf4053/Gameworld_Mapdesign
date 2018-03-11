@@ -6,7 +6,7 @@ using System.IO;
 public class HexUnit : MonoBehaviour {
 
 	const float rotationSpeed = 180f;
-	const float travelSpeed = 4f;
+	const float travelSpeed = 2f;
 
 	public static HexUnit unitPrefab;
 
@@ -48,7 +48,7 @@ public class HexUnit : MonoBehaviour {
 
 	public int VisionRange {
 		get {
-			return 3;
+			return 2;
 		}
 	}
 

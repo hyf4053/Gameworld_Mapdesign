@@ -101,4 +101,9 @@ public class HexMapCamera : MonoBehaviour {
 
 		return position;
 	}
+
+    public void MovingCameraToUnit(HexCoordinates hexCoordinate)
+    {
+
+    }
 }

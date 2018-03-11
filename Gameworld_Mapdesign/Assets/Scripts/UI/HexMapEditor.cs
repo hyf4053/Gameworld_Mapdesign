@@ -145,12 +145,25 @@ public class HexMapEditor : MonoBehaviour {
 
 	void CreateUnit () {
 		HexCell cell = GetCellUnderCursor();
+        Debug.Log(cell.coordinates+"X:"+cell.coordinates.X+"Z:"+cell.coordinates.Z);
 		if (cell && !cell.Unit) {
 			hexGrid.AddUnit(
 				Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f)
 			);
 		}
 	}
+
+    public bool CreateUnit(HexCoordinates coordinate)
+    {
+        HexCell cell = hexGrid.GetCell(coordinate);
+        if(cell && !cell.Unit && !cell.Walled && !cell.IsUnderwater && !cell.IsSpecial)
+        {
+            hexGrid.AddUnit(Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f));
+            return true;
+        }
+
+        return false;
+    }
 
 	void DestroyUnit () {
 		HexCell cell = GetCellUnderCursor();

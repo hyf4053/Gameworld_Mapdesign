@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 68505626}
   - component: {fileID: 68505625}
   - component: {fileID: 68505624}
+  - component: {fileID: 68505629}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -582,6 +583,18 @@ Transform:
   m_Father: {fileID: 1752896679}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &68505629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68505623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 77d6215403c09404f92b25b4bc3207ef, type: 2}
 --- !u!1 &83148136
 GameObject:
   m_ObjectHideFlags: 0
@@ -7058,6 +7071,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051266393}
+--- !u!1 &1051485525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1051485527}
+  - component: {fileID: 1051485526}
+  m_Layer: 0
+  m_Name: Playmode Manger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1051485526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1051485525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd83ca14d8dd754ba5393df6ec97d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePlayEditor: {fileID: 2142000451}
+  hexMapCamera: {fileID: 0}
+--- !u!4 &1051485527
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1051485525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 210.75, y: 306, z: 80.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1053672450
 GameObject:
   m_ObjectHideFlags: 0
@@ -10731,6 +10786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexGrid: {fileID: 1571186511}
   mapGenerator: {fileID: 2056945512}
+  playMode: {fileID: 1051485526}
 --- !u!1 &1651949012
 GameObject:
   m_ObjectHideFlags: 0
@@ -13771,7 +13827,7 @@ MonoBehaviour:
   extaLakeProbability: 0.25
   lowTemperature: 0
   highTemperature: 1
-  hemisphere: 0
+  hemisphere: 2
   temperatureJitter: 0.1
 --- !u!4 &2056945513
 Transform:

@@ -7,7 +7,7 @@ public class HexGridChunk : MonoBehaviour {
 
 	public HexFeatureManager features;
 
-	HexCell[] cells;
+	public HexCell[] cells;
 
 	Canvas gridCanvas;
 

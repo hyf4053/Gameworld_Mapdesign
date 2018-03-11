@@ -235,8 +235,8 @@ public class HexGrid : MonoBehaviour {
 	}
 
 	public void Load (BinaryReader reader, int header) {
-		ClearPath();
-		ClearUnits();
+		//ClearPath();
+		//ClearUnits();
 		int x = 20, z = 15;
 		if (header >= 1) {
 			x = reader.ReadInt32();
