@@ -8,6 +8,8 @@ public class HexUnit : MonoBehaviour {
 	const float rotationSpeed = 180f;
 	const float travelSpeed = 2f;
 
+    
+
 	public static HexUnit unitPrefab;
 
 	public HexGrid Grid { get; set; }

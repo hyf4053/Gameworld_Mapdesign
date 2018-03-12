@@ -336,6 +336,7 @@
     <Compile Include="Assets\Scripts\MainMeun Scripts\MainMenuButton.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\Bezier.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\EdgeVertices.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\GetHexInfo.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\HexCell.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\HexCellPriorityQueue.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\HexCellShaderData.cs" />

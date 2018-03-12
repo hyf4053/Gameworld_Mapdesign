@@ -189,6 +189,16 @@ public class HexMapEditor : MonoBehaviour {
 		}
 	}
 
+    public HexCoordinates HandleInput(int i)
+    {
+        //HexCoordinates hexCoordinates = new HexCoordinates(0, 0);
+        HexCell currentCell = GetCellUnderCursor();
+        HexCoordinates coordinates = currentCell.coordinates;
+        return coordinates;
+    }
+
+
+
 	void ValidateDrag (HexCell currentCell) {
 		for (
 			dragDirection = HexDirection.NE;

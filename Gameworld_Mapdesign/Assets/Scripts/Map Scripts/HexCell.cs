@@ -164,6 +164,8 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
+    
+
 	public int FarmLevel {
 		get {
 			return farmLevel;

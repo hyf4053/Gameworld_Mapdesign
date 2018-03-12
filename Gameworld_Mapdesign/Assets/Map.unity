@@ -589,7 +589,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 68505623}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
@@ -7099,7 +7099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePlayEditor: {fileID: 2142000451}
-  hexMapCamera: {fileID: 0}
+  hexMapCamera: {fileID: 2102140320}
 --- !u!4 &1051485527
 Transform:
   m_ObjectHideFlags: 0
@@ -12273,6 +12273,64 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845189122}
+--- !u!1 &1848923569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1848923571}
+  - component: {fileID: 1848923570}
+  m_Layer: 0
+  m_Name: Cell Information
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1848923570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848923569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4101e57550460448ce3d9040e10723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hexGrid: {fileID: 1571186511}
+  hexMapEditor: {fileID: 2142000451}
+  currentHexCoordinates:
+    x: 0
+    z: 0
+  preSelectCell: []
+  currentHexCell: {fileID: 0}
+  terrain: 
+  elevation: 
+  IsUnderwater: 0
+  HasRiver: 0
+  HasRiverBeginOrEnd: 0
+  HasRoads: 0
+  IsSpecial: 0
+  Walled: 0
+  IsVisible: 0
+  IsExplored: 0
+  Explorable: 0
+--- !u!4 &1848923571
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848923569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 539.7344, y: 86.11719, z: 762.03125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1849126628
 GameObject:
   m_ObjectHideFlags: 0

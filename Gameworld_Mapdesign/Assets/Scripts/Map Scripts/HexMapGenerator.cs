@@ -115,7 +115,7 @@ public class HexMapGenerator : MonoBehaviour {
 
 	List<HexDirection> flowDirections = new List<HexDirection>();
 
-	struct Biome {
+	public struct Biome {
 		public int terrain, plant;
 
 		public Biome (int terrain, int plant) {
@@ -128,7 +128,7 @@ public class HexMapGenerator : MonoBehaviour {
 
 	static float[] moistureBands = { 0.12f, 0.28f, 0.85f };
 
-	static Biome[] biomes = {
+	public static Biome[] biomes = {
 		new Biome(0, 0), new Biome(4, 0), new Biome(4, 0), new Biome(4, 0),
 		new Biome(0, 0), new Biome(2, 0), new Biome(2, 1), new Biome(2, 2),
 		new Biome(0, 0), new Biome(1, 0), new Biome(1, 1), new Biome(1, 2),
