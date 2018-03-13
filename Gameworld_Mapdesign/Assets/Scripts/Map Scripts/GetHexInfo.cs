@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GetHexInfo : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GetHexInfo : MonoBehaviour
     // HexMesh hexMesh;
     // HexCell cell;
 
+
+    public Text cellInfoDisplay;
     public HexGrid hexGrid;
     public HexMapEditor hexMapEditor;
     public HexCoordinates currentHexCoordinates;
@@ -78,7 +81,10 @@ public class GetHexInfo : MonoBehaviour
         {
             preSelectCell.SetValue(currentHexCell, 0);
         }
-        
+        cellInfoDisplay.text = "Terrain：" + terrain + "\n" + "Elevation：" + elevation + "\n" + "Is Underwater：" + IsUnderwater +
+            "\n" + "Has River：" + HasRiver + "\n" + "Has River B OR E：" + HasRiverBeginOrEnd + "\n" + "Has Roads：" + HasRoads +
+            "\n" + "Is Special：" + IsSpecial + "\n" + "Is Visible：" + IsVisible + "\n" + "Is Explored：" + IsExplored + "\n" + "Explorable：" + Explorable;
     }
+
 
 }
