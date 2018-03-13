@@ -21,6 +21,7 @@ public class GetHexInfo : MonoBehaviour
     public HexCell currentHexCell;
     public string terrain;
     public string elevation;
+    public int urbanLevel;
     public bool IsUnderwater, HasRiver, HasRiverBeginOrEnd, HasRoads, IsSpecial, Walled, IsVisible, IsExplored, Explorable;
     //public Terrain terrain;
 
@@ -63,7 +64,17 @@ public class GetHexInfo : MonoBehaviour
         IsVisible = currentHexCell.IsVisible;
         IsExplored = currentHexCell.IsExplored;
         Explorable = currentHexCell.Explorable;
+
+        urbanLevel = currentHexCell.UrbanLevel;
+
         currentHexCell.EnableHighlight(Color.yellow);
+        currentHexCell.PortalIndex = 1;
+        //currentHexCell.Walled = true;
+       // currentHexCell.SpaceCrackIndex = 1;
+        //currentHexCell.SpecialIndex = 1;
+       // Debug.Log(currentHexCell.SpaceCrackIndex);
+        //currentHexCell.SpaceCrackIndex
+        //currentHexCell.UrbanLevel = 1;
         if (preSelectCell.GetValue(0) != null && (HexCell)preSelectCell.GetValue(0) != currentHexCell)
         {
             preSelectCell.SetValue(currentHexCell, 1);
@@ -81,7 +92,7 @@ public class GetHexInfo : MonoBehaviour
         {
             preSelectCell.SetValue(currentHexCell, 0);
         }
-        cellInfoDisplay.text = "Terrain：" + terrain + "\n" + "Elevation：" + elevation + "\n" + "Is Underwater：" + IsUnderwater +
+        cellInfoDisplay.text = "Cell Position："+currentHexCoordinates.ToString() +"\n" + "Terrain：" + terrain + "\n" + "Elevation：" + elevation + "\n" + "Is Underwater：" + IsUnderwater +
             "\n" + "Has River：" + HasRiver + "\n" + "Has River B OR E：" + HasRiverBeginOrEnd + "\n" + "Has Roads：" + HasRoads +
             "\n" + "Is Special：" + IsSpecial + "\n" + "Is Visible：" + IsVisible + "\n" + "Is Explored：" + IsExplored + "\n" + "Explorable：" + Explorable;
     }

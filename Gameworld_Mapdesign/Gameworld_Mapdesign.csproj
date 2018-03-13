@@ -333,6 +333,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\Scripts\FPSDisplay.cs" />
     <Compile Include="Assets\Scripts\MainMeun Scripts\MainMenuButton.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\Bezier.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\EdgeVertices.cs" />
@@ -349,6 +350,7 @@
     <Compile Include="Assets\Scripts\Map Scripts\HexGridChunk.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\HexHash.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\HexMapCamera.cs" />
+    <Compile Include="Assets\Scripts\Map Scripts\HexMapFeatureEditor.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\HexMapGenerator.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\HexMesh.cs" />
     <Compile Include="Assets\Scripts\Map Scripts\HexMetrics.cs" />

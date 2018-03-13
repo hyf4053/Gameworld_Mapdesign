@@ -11,6 +11,8 @@ public class HexFeatureManager : MonoBehaviour {
 
 	public Transform[] special;
 
+   public Transform[] portal;
+
 	Transform container;
 
     //清除地图元素
@@ -108,6 +110,25 @@ public class HexFeatureManager : MonoBehaviour {
 		instance.SetParent(container, false);
 	}
 
+    public void AddPortalFeature(HexCell cell, Vector3 position)
+    {
+        Transform instance1 = Instantiate(portal[cell.PortalIndex - 1]);
+        instance1.localPosition = HexMetrics.Perturb(position);
+        HexHash hash = HexMetrics.SampleHashGrid(position);
+        instance1.localRotation = Quaternion.Euler(0f, 360f * hash.e, 0f);
+        instance1.SetParent(container, false);
+    }
+
+/*
+    public void AddSpaceCrack(HexCell cell, Vector3 position)
+    {
+        HexHash hash = HexMetrics.SampleHashGrid(position);
+        Transform instance = Instantiate(spaceCrack[cell.SpaceCrackIndex - 1]);
+        instance.localPosition = HexMetrics.Perturb(position);
+        instance.localRotation = Quaternion.Euler(0f, 360f * hash.e, 0f);
+        instance.SetParent(container, false);
+    }
+    */
 	public void AddWall (
 		EdgeVertices near, HexCell nearCell,
 		EdgeVertices far, HexCell farCell,

@@ -12,7 +12,9 @@ public class HexCell : MonoBehaviour {
 
 	public int Index { get; set; }
 
-	public int Elevation {
+    int portalIndex;
+
+    public int Elevation {
 		get {
 			return elevation;
 		}
@@ -203,7 +205,56 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
-	public bool IsSpecial {
+    public int PortalIndex
+    {
+        get
+        {
+            return portalIndex;
+        }
+        set
+        {
+            if (portalIndex != value)
+            {
+                portalIndex = value;
+                RefreshSelfOnly();
+            }
+        }
+    }
+
+    public bool IsPortal
+    {
+        get
+        {
+            return portalIndex > 0;
+        }
+    }
+    /*
+    public int SpaceCrackIndex
+    {
+        get
+        {
+            return spaceCrackIndex;
+        }
+        set
+        {
+            if (specialIndex != value && !HasRiver)
+            {
+                spaceCrackIndex = value;
+                RemoveRoads();
+                RefreshSelfOnly();
+            }
+        }
+    }
+   
+    public bool IsCrack
+    {
+        get
+        {
+            return spaceCrackIndex > 0;
+        }
+    }
+     */
+    public bool IsSpecial {
 		get {
 			return specialIndex > 0;
 		}
@@ -286,7 +337,10 @@ public class HexCell : MonoBehaviour {
 
 	int specialIndex;
 
-	int distance;
+  //  int spaceCrackIndex;
+
+
+    int distance;
 
 	int visibility;
 

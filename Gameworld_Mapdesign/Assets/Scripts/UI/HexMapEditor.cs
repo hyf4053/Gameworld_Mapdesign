@@ -11,7 +11,7 @@ public class HexMapEditor : MonoBehaviour {
 	int activeElevation;
 	int activeWaterLevel;
 
-	int activeUrbanLevel, activeFarmLevel, activePlantLevel, activeSpecialIndex;
+	int activeUrbanLevel, activeFarmLevel, activePlantLevel, activeSpecialIndex,activePortalIndex /*,activeSpaceCrackIndex*/;
 
 	int activeTerrainTypeIndex;
 
@@ -20,7 +20,7 @@ public class HexMapEditor : MonoBehaviour {
 	bool applyElevation = true;
 	bool applyWaterLevel = true;
 
-	bool applyUrbanLevel, applyFarmLevel, applyPlantLevel, applySpecialIndex;
+	bool applyUrbanLevel, applyFarmLevel, applyPlantLevel, applySpecialIndex, applyPortalIndex/*,applySpaceIndex*/;
 
 	enum OptionalToggle {
 		Ignore, Yes, No
@@ -31,6 +31,16 @@ public class HexMapEditor : MonoBehaviour {
 	bool isDrag;
 	HexDirection dragDirection;
 	HexCell previousCell;
+
+    public void SetApplyPortalIndex(bool toggle)
+    {
+        applyPortalIndex = toggle;
+    }
+
+    public void SetPortalIndex (float index)
+    {
+        activePortalIndex = (int)index;
+    }
 
 	public void SetTerrainTypeIndex (int index) {
 		activeTerrainTypeIndex = index;
@@ -83,7 +93,17 @@ public class HexMapEditor : MonoBehaviour {
 	public void SetSpecialIndex (float index) {
 		activeSpecialIndex = (int)index;
 	}
+/*
+    public void SetApplySpaceCrackIndex (bool toggle)
+    {
+        applySpaceIndex = toggle;
+    }
 
+    public void SetSpaceCrackIndex (float index)
+    {
+        activeSpaceCrackIndex = (int)index;
+    }
+    */
 	public void SetBrushSize (float size) {
 		brushSize = (int)size;
 	}
@@ -152,7 +172,7 @@ public class HexMapEditor : MonoBehaviour {
 			);
 		}
 	}
-
+    // 创建随机位置单位
     public bool CreateUnit(HexCoordinates coordinate)
     {
         HexCell cell = hexGrid.GetCell(coordinate);
@@ -243,6 +263,15 @@ public class HexMapEditor : MonoBehaviour {
 			if (applySpecialIndex) {
 				cell.SpecialIndex = activeSpecialIndex;
 			}
+            if (applyPortalIndex)
+            {
+                cell.PortalIndex = activePortalIndex;
+            }
+            /*
+            if (applySpaceIndex)
+            {
+                cell.SpaceCrackIndex = activeSpaceCrackIndex;
+            }*/
 			if (applyUrbanLevel) {
 				cell.UrbanLevel = activeUrbanLevel;
 			}

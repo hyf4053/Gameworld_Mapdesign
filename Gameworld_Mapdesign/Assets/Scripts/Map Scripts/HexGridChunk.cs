@@ -73,7 +73,12 @@ public class HexGridChunk : MonoBehaviour {
 				features.AddSpecialFeature(cell, cell.Position);
 			}
 		}
-	}
+
+        if (cell.IsPortal)
+        {
+          features.AddPortalFeature(cell, cell.Position);
+        }
+    }
 
 	void Triangulate (HexDirection direction, HexCell cell) {
 		Vector3 center = cell.Position;
